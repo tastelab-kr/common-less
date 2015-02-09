@@ -13,7 +13,7 @@ Tastelab Common Less
 ## 사용법
 
 ```bash
-$ bower install 
+$ bower install https://github.com/tastelab-kr/common-less.git --save
 ```
 
 desktop의 경우 desktop.less를 사용.
