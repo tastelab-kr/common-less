@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+lessc desktop.less -x > /dev/null
+
+if [ $? -eq 0 ]
+then
+    echo "desktop.less test success:)"
+fi
+
+lessc mobile.less -x > /dev/null
+
+if [ $? -eq 0 ]
+then
+    echo "mobile.less test success:)"
+fi

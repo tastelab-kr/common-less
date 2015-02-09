@@ -1,0 +1,80 @@
+.visible-less-than(@x) {
+    @media (max-width: @x) {
+        .responsive-visibility();
+    }
+}
+.visible-less-than-block(@x) {
+    @media (max-width: @x) {
+        display: block !important;
+    }
+}   
+.visible-less-than-inline(@x) {
+    @media (max-width: @x) {
+        display: inline !important;
+    }
+}
+.visible-less-than-inline-block(@x) {
+    @media (max-width: @x) {
+        display: inline-block !important;
+    }
+}
+
+
+.visible-between-and(@x, @y) {
+    @media (min-width: @x) and (max-width: @y) {
+        .responsive-visibility();
+    }
+}
+.visible-between-and-block(@x, @y) {
+    @media (min-width: @x) and (max-width: @y) {
+        display: block !important;
+    }
+}
+.visible-between-and-inline(@x, @y) {
+    @media (min-width: @x) and (max-width: @y) {
+        display: inline !important;
+    }
+}
+.visible-between-and-inline-block(@x, @y) {
+    @media (min-width: @x) and (max-width: @y) {
+        display: inline-block !important;
+    }
+}
+
+
+.visible-greater-than(@x) {
+    @media (min-width: @x) {
+        .responsive-visibility();
+    }
+}
+.visible-greater-than-block(@x) {
+    @media (min-width: @x) {
+        display: block !important;
+    }
+}
+.visible-greater-than-inline(@x) {
+    @media (min-width: @x) {
+        display: inline !important;
+    }
+}
+.visible-greater-than-inline-block(@x) {
+    @media (min-width: @x) {
+        display: inline-block !important;
+    }
+}
+
+.hidden-less-than(@x) {
+    @media (max-width: @x) {
+        .responsive-invisibility();
+    }
+}
+.hidden-between-and(@x, @y) {
+    @media (min-width: @x) and (max-width: @y) {
+        .responsive-invisibility();
+    }
+}
+.hidden-greater-than(@x) {
+    @media (min-width: @x) {
+        .responsive-invisibility();
+    }
+}
