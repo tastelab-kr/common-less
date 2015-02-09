@@ -1,80 +1,124 @@
-.visible-less-than(@x) {
+
+.responsive-visibility() {
+  display: block !important;
+  table&  { display: table; }
+  tr&     { display: table-row !important; }
+  th&,
+  td&     { display: table-cell !important; }
+}
+
+.responsive-invisibility() {
+  display: none !important;
+}
+
+
+
+
+.less-than(@x, @callback) {
     @media (max-width: @x) {
-        .responsive-visibility();
+        @callback();
     }
+}
+
+.between-and(@x, @y, @callback) {
+    @media (min-width: @x) and (max-width: @y) {
+        @callback();
+    }
+}
+
+.greater-than(@x, @callback) {
+    @media (min-width: @x) {
+        @callback();
+    }
+}
+
+
+
+
+.visible-less-than(@x) {
+    .less-than(@x, {
+        .responsive-visibility()
+    });
 }
 .visible-less-than-block(@x) {
-    @media (max-width: @x) {
+    .less-than(@x, {
         display: block !important;
-    }
+    });
 }   
 .visible-less-than-inline(@x) {
-    @media (max-width: @x) {
+    .less-than(@x, {
         display: inline !important;
-    }
+    });
 }
 .visible-less-than-inline-block(@x) {
-    @media (max-width: @x) {
+    .less-than(@x, {
         display: inline-block !important;
-    }
+    });
 }
+
+
+
 
 
 .visible-between-and(@x, @y) {
-    @media (min-width: @x) and (max-width: @y) {
+    .between-and(@x, @y, {
         .responsive-visibility();
-    }
+    });
 }
 .visible-between-and-block(@x, @y) {
-    @media (min-width: @x) and (max-width: @y) {
+    .between-and(@x, @y, {
         display: block !important;
-    }
+    });
 }
 .visible-between-and-inline(@x, @y) {
-    @media (min-width: @x) and (max-width: @y) {
+    .between-and(@x, @y, {
         display: inline !important;
-    }
+    });
 }
 .visible-between-and-inline-block(@x, @y) {
-    @media (min-width: @x) and (max-width: @y) {
+    .between-and(@x, @y, {
         display: inline-block !important;
-    }
+    });
 }
+
+
 
 
 .visible-greater-than(@x) {
-    @media (min-width: @x) {
+    .greater-than(@x, {
         .responsive-visibility();
-    }
+    });
 }
 .visible-greater-than-block(@x) {
-    @media (min-width: @x) {
+    .greater-than(@x, {
         display: block !important;
-    }
+    });
 }
 .visible-greater-than-inline(@x) {
-    @media (min-width: @x) {
+    .greater-than(@x, {
         display: inline !important;
-    }
+    });
 }
 .visible-greater-than-inline-block(@x) {
-    @media (min-width: @x) {
+    .greater-than(@x, {
         display: inline-block !important;
-    }
+    });
 }
 
+
+
 .hidden-less-than(@x) {
-    @media (max-width: @x) {
+    .less-then(@x, {
         .responsive-invisibility();
-    }
+    });
 }
 .hidden-between-and(@x, @y) {
-    @media (min-width: @x) and (max-width: @y) {
+    .between-and(@x, @y, {
         .responsive-invisibility();
-    }
+    });
 }
 .hidden-greater-than(@x) {
-    @media (min-width: @x) {
+    .greater-than(@x, {
         .responsive-invisibility();
-    }
+    });
 }
